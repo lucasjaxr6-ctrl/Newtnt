@@ -218,20 +218,22 @@ header.solid .marca img{height:44px}
 .passos li::before{counter-increment:p;content:counter(p);flex:none;width:40px;height:40px;border-radius:50%;background:var(--azul);color:#fff;font-family:var(--tit);font-weight:900;display:flex;align-items:center;justify-content:center}
 .passos b{font-family:var(--tit);font-weight:800;display:block}
 .passos small{color:var(--mudo);font-size:15px}
-form{background:#fff;border:1px solid var(--linha);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:0 40px 80px -50px rgba(15,42,68,.55)}
-form h3{font-size:28px;margin-bottom:4px}
-form>p{color:var(--mudo);font-size:15px;margin-bottom:22px}
-.campos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.campo{display:flex;flex-direction:column;gap:6px}
-.campo.full{grid-column:1/-1}
-.campo label{font-size:13px;font-weight:700}
-.campo input,.campo select,.campo textarea{font:inherit;font-size:15px;padding:13px 15px;border:2px solid var(--linha);border-radius:12px;background:var(--fundo);color:var(--tinta);width:100%;transition:border-color .2s,background .2s}
-.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--ciano);background:#fff}
-.campo textarea{min-height:90px;resize:vertical}
-.cor-sel{display:flex;align-items:center;gap:10px}
-.cor-sel i{width:22px;height:22px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
-form .btn{width:100%;justify-content:center;margin-top:20px;padding:17px}
-form .nota{font-size:12px;color:var(--mudo);text-align:center;margin-top:10px}
+
+.zap-card{background:linear-gradient(160deg,#fff,#EFFBF3);border:1px solid #CDEFD9;border-radius:28px;padding:clamp(30px,5vw,52px);text-align:center;box-shadow:0 40px 80px -50px rgba(15,42,68,.5);position:relative;overflow:hidden}
+.zap-card::before,.zap-card::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.zap-card::before{width:220px;height:220px;right:-70px;top:-70px;background:rgba(75,191,234,.14)}
+.zap-card::after{width:140px;height:140px;left:-50px;bottom:-50px;background:rgba(37,211,102,.12)}
+.zap-ic{position:relative;z-index:1;width:92px;height:92px;margin:0 auto 22px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 36px -14px rgba(37,211,102,.8)}
+.zap-ic svg{width:50px;height:50px}
+.zap-ic::before,.zap-ic::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:onda 2.8s ease-out infinite}
+.zap-ic::after{animation-delay:1.4s}
+.zap-card h3{position:relative;font-size:clamp(26px,3vw,32px);margin-bottom:10px}
+.zap-card p{position:relative;color:var(--mudo);max-width:42ch;margin:0 auto 26px}
+.btn-grande{position:relative;font-size:18px;padding:19px 34px}
+.zap-num{position:relative;margin-top:18px;display:flex;flex-direction:column;gap:2px;font-size:15px;color:var(--mudo)}
+.zap-num b{font-family:var(--tit);font-size:22px;color:var(--tinta)}
+.zap-num a{color:var(--azul);font-weight:700}
+.orc .wrap{align-items:center}
 
 /* contato */
 .contato{background:var(--fundo);padding-bottom:0}
@@ -486,7 +488,7 @@ footer{background:var(--tinta);color:#A9BBCC;padding:60px 0 30px;font-size:14px}
       <div class="rv">
         <div class="paleta" id="paleta" role="group" aria-label="Cores disponíveis"></div>
         <p class="cat-info">As cores na tela são aproximadas e podem variar conforme o monitor. Para amostras físicas, fale com a nossa equipe.</p>
-        <a class="btn btn-azul" href="#orcamento" id="pedir-cor" style="margin-top:22px">Pedir esta cor</a>
+        <a class="btn btn-zap" href="#" target="_blank" rel="noopener" id="pedir-cor" style="margin-top:22px"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>Pedir esta cor</a>
       </div>
     </div>
   </div>
@@ -546,30 +548,20 @@ footer{background:var(--tinta);color:#A9BBCC;padding:60px 0 30px;font-size:14px}
     <div class="rv">
       <span class="tag"><i><b></b><b></b><b></b></i>Como comprar</span>
       <h2>Faça seu pedido em <span>poucos passos</span></h2>
-      <p class="lead">Monte o pedido ao lado e envie direto para o WhatsApp do nosso comercial.</p>
+      <p class="lead">Atendimento direto pelo WhatsApp, sem cadastro e sem complicação.</p>
       <ol class="passos">
         <li><div><b>Escolha cor e medidas</b><small>Use a cartela de cores e as tabelas de medidas.</small></div></li>
-        <li><div><b>Envie o pedido</b><small>O formulário monta a mensagem e abre o WhatsApp.</small></div></li>
+        <li><div><b>Chame no WhatsApp</b><small>Envie cor, medidas e quantidade para o nosso comercial.</small></div></li>
         <li><div><b>Receba a proposta</b><small>Nossa equipe retorna com valores e prazo de entrega.</small></div></li>
       </ol>
     </div>
-    <form id="form" class="rv" novalidate>
-      <h3>Solicite seu orçamento</h3>
-      <p>Preencha o que já souber. O restante combinamos no atendimento.</p>
-      <div class="campos">
-        <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" autocomplete="name" placeholder="Seu nome" required></div>
-        <div class="campo"><label for="f-emp">Empresa</label><input id="f-emp" autocomplete="organization" placeholder="Nome da empresa"></div>
-        <div class="campo"><label for="f-cid">Cidade / UF</label><input id="f-cid" placeholder="Ex.: Niterói / RJ"></div>
-        <div class="campo"><label for="f-apl">Aplicação</label><select id="f-apl"><option>Saúde e higiene</option><option>Casa e estofados</option><option>Vestuário e calçados</option><option>Embalagens e sacolas</option><option>Automotivo</option><option>Agro e eventos</option><option>Outra</option></select></div>
-        <div class="campo"><label for="f-cor">Cor</label><div class="cor-sel"><i id="f-cor-i" style="background:#F6C200"></i><select id="f-cor"></select></div></div>
-        <div class="campo"><label for="f-gram">Gramatura</label><select id="f-gram"><option>Não sei ainda</option><option>20 g/m²</option><option>30 g/m²</option><option>35 g/m²</option><option>40 g/m²</option><option>60 g/m²</option><option>80 g/m²</option><option>100 g/m²</option><option>120 g/m²</option><option>150 g/m²</option></select></div>
-        <div class="campo"><label for="f-larg">Largura</label><select id="f-larg"><option>Não sei ainda</option><option>até 1,40 m</option><option>até 1,50 m</option><option>até 1,55 m</option><option>até 1,70 m</option><option>Sob medida</option></select></div>
-        <div class="campo"><label for="f-met">Metragem do rolo</label><select id="f-met"><option>Não sei ainda</option><option>50 m</option><option>100 m</option><option>250 m</option><option>350 m</option><option>500 m</option><option>1.000 m</option><option>2.500 m</option><option>4.000 m</option></select></div>
-        <div class="campo full"><label for="f-msg">Quantidade e observações</label><textarea id="f-msg" placeholder="Quantidade de rolos, prazo desejado…"></textarea></div>
-      </div>
-      <button class="btn btn-zap" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>Enviar pedido pelo WhatsApp</button>
-      <p class="nota">O WhatsApp abre com a mensagem pronta para você revisar e enviar.</p>
-    </form>
+    <div class="zap-card rv">
+      <span class="zap-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></span>
+      <h3>Fale direto com o comercial</h3>
+      <p>Conte a cor, a gramatura, a largura e a quantidade que precisa. Respondemos com valores e prazo de entrega.</p>
+      <a class="btn btn-zap btn-grande" id="zap-main" href="https://api.whatsapp.com/send?phone=5522999950154&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20TNT." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>Chamar no WhatsApp</a>
+      <div class="zap-num"><b>(22) 99995-0154</b><span>ou <a href="https://api.whatsapp.com/send?phone=5522999339270" target="_blank" rel="noopener">(22) 99933-9270</a></span></div>
+    </div>
   </div>
 </section>
 
@@ -672,13 +664,11 @@ footer{background:var(--tinta);color:#A9BBCC;padding:60px 0 30px;font-size:14px}
 
   // cores
   var pal=document.getElementById('paleta'),vi=document.getElementById('vit-img'),vc=document.getElementById('vit-cor'),vn=document.getElementById('vit-nome'),vr=document.getElementById('vit-ref');
-  var sel=document.getElementById('f-cor'),seli=document.getElementById('f-cor-i'),atual=0,auto;
-  sel.innerHTML='<option value="">Não sei ainda</option>'+CORES.map(function(c,i){return '<option value="'+i+'">REF. '+c[0]+' · '+c[1]+'</option>'}).join('');
+  var atual=0,auto,pc=document.getElementById('pedir-cor');
   CORES.forEach(function(c,i){var b=document.createElement('button');b.style.setProperty('--c',c[2]);b.setAttribute('aria-label','REF. '+c[0]+' '+c[1]);b.setAttribute('aria-pressed',i===0);b.innerHTML='<span>'+c[1]+'</span>';b.addEventListener('click',function(){mostra(i);clearInterval(auto)});pal.appendChild(b);new Image().src='img/cores/ref-'+c[0]+'.jpg'});
-  function mostra(i){atual=i;var c=CORES[i];[].forEach.call(pal.children,function(b,k){b.setAttribute('aria-pressed',k===i)});vi.classList.add('sai');setTimeout(function(){vi.src='img/cores/ref-'+c[0]+'.jpg';vi.alt='Rolo de TNT na cor '+c[1].toLowerCase();vi.classList.remove('sai')},250);vc.style.background=c[2];vn.textContent=c[1];vr.textContent='REF. '+c[0]}
+  function mostra(i){atual=i;var c=CORES[i];[].forEach.call(pal.children,function(b,k){b.setAttribute('aria-pressed',k===i)});vi.classList.add('sai');setTimeout(function(){vi.src='img/cores/ref-'+c[0]+'.jpg';vi.alt='Rolo de TNT na cor '+c[1].toLowerCase();vi.classList.remove('sai')},250);vc.style.background=c[2];vn.textContent=c[1];vr.textContent='REF. '+c[0];pc.href='https://api.whatsapp.com/send?phone='+WPP+'&text='+encodeURIComponent('Olá! Vim pelo site e gostaria de um orçamento de TNT na cor REF. '+c[0]+' ('+c[1]+').')}
   if(!reduz){var vit=document.getElementById('cores');var vio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!auto){auto=setInterval(function(){mostra((atual+1)%CORES.length)},2600)}})},{threshold:.3});vio.observe(vit)}
-  document.getElementById('pedir-cor').addEventListener('click',function(){sel.value=atual;seli.style.background=CORES[atual][2]});
-  sel.addEventListener('change',function(){seli.style.background=sel.value===''?'#fff':CORES[+sel.value][2]});
+  mostra(0);
 
   // lightbox mosaico
   var lb=document.getElementById('lb'),li=lb.querySelector('img');
@@ -686,17 +676,6 @@ footer{background:var(--tinta);color:#A9BBCC;padding:60px 0 30px;font-size:14px}
   lb.addEventListener('click',function(e){if(e.target!==li)lb.classList.remove('on')});
   addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
 
-  // formulário -> WhatsApp
-  document.getElementById('form').addEventListener('submit',function(e){
-    e.preventDefault();var g=function(id){return document.getElementById(id).value.trim()};
-    if(!g('f-nome')){document.getElementById('f-nome').focus();return}
-    var cor=sel.value===''?'Não sei ainda':'REF. '+CORES[+sel.value][0]+' · '+CORES[+sel.value][1];
-    var l=['Olá! Vim pelo site e gostaria de um orçamento de TNT.','','*Nome:* '+g('f-nome')];
-    if(g('f-emp'))l.push('*Empresa:* '+g('f-emp'));if(g('f-cid'))l.push('*Cidade:* '+g('f-cid'));
-    l.push('*Aplicação:* '+g('f-apl'),'*Cor:* '+cor,'*Gramatura:* '+g('f-gram'),'*Largura:* '+g('f-larg'),'*Metragem:* '+g('f-met'));
-    if(g('f-msg'))l.push('*Observações:* '+g('f-msg'));
-    window.open('https://api.whatsapp.com/send?phone='+WPP+'&text='+encodeURIComponent(l.join('\n')),'_blank','noopener');
-  });
 })();
 </script>
 </body>
