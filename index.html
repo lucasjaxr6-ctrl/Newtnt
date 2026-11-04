@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New TNT · Alto padrão em não tecidos</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="NEWTNT Indústria de Tecidos: fabricante e distribuidora de TNT (tecido não tecido) em rolos, 18 cores, 20 a 150 g/m², com distribuição para todo o Brasil.">
+<meta property="og:title" content="New TNT · Alto padrão em não tecidos">
+<meta property="og:description" content="Fabricante e distribuidora de TNT em rolos. 18 cores, gramaturas de 20 a 150 g/m², produção sob medida e entrega em todo o Brasil.">
+<meta property="og:image" content="https://lucasjaxr6-ctrl.github.io/Newtnt/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0069B4">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#0069B4; --azul-esc:#0A4F8A; --ciano:#4BBFEA; --ciano-cl:#E4F5FC; --cinza:#727272;
+  --tinta:#0F2A44; --mudo:#5B6B7C; --linha:#DCE7F0; --fundo:#F5F9FC; --branco:#fff;
+  --tit:"Nunito",system-ui,sans-serif; --txt:"Nunito Sans",system-ui,sans-serif;
+  --w:1200px; --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--txt);color:var(--tinta);background:var(--branco);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:3px solid var(--ciano);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--tit);line-height:1.1;letter-spacing:-.01em;font-weight:800}
+h2{font-size:clamp(32px,4.2vw,48px);margin:12px 0 16px}
+h2 span{color:var(--azul)}
+.tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--tit);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--azul)}
+.tag i{display:inline-flex;gap:4px}
+.tag i b{width:7px;height:7px;border-radius:50%;background:var(--ciano)}
+.tag i b:nth-child(2){background:var(--cinza)}.tag i b:nth-child(3){background:var(--azul)}
+.lead{font-size:18px;color:var(--mudo);max-width:58ch}
+section{padding:clamp(80px,10vw,130px) 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:999px;font-family:var(--tit);font-weight:800;font-size:16px;transition:transform .25s,box-shadow .25s,background .25s,color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px}
+.btn-azul{background:var(--azul);color:#fff;box-shadow:0 12px 26px -12px rgba(0,105,180,.7)}
+.btn-azul:hover{background:var(--azul-esc);box-shadow:0 16px 30px -12px rgba(0,105,180,.8)}
+.btn-zap{background:#25D366;color:#fff;box-shadow:0 12px 26px -12px rgba(37,211,102,.7)}
+.btn-linha{border:2px solid var(--linha);color:var(--tinta);background:#fff}
+.btn-linha:hover{border-color:var(--azul);color:var(--azul)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:60;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);transition:box-shadow .3s}
+header.solid{box-shadow:0 8px 30px -18px rgba(15,42,68,.35)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;transition:height .3s}
+header.solid .wrap{height:70px}
+.marca img{height:54px;width:auto;transition:height .3s}
+header.solid .marca img{height:44px}
+.menu{display:flex;align-items:center;gap:30px;font-family:var(--tit);font-weight:700;font-size:15px}
+.menu a:not(.btn){position:relative;color:var(--tinta)}
+.menu a:not(.btn)::after{content:"";position:absolute;left:50%;bottom:-6px;width:6px;height:6px;border-radius:50%;background:var(--ciano);transform:translateX(-50%) scale(0);transition:transform .25s}
+.menu a:not(.btn):hover::after,.menu a.ativo::after{transform:translateX(-50%) scale(1)}
+.menu .btn{padding:11px 20px;font-size:15px}
+.hamb{display:none;width:46px;height:46px;align-items:center;justify-content:center;border-radius:50%;background:var(--ciano-cl);color:var(--azul)}
+.hamb svg{width:24px;height:24px}
+
+/* hero */
+.hero{padding:150px 0 70px;background:linear-gradient(180deg,#fff 0%,var(--fundo) 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(40px,5.8vw,72px);margin:16px 0 20px}
+.hero h1 .c{color:var(--ciano)}.hero h1 .a{color:var(--azul)}
+.hero p{font-size:clamp(17px,1.5vw,19px);color:var(--mudo);max-width:48ch;margin-bottom:32px}
+.ctas{display:flex;flex-wrap:wrap;gap:14px}
+.hero-vis{position:relative;aspect-ratio:1/1;max-width:560px;justify-self:end;width:100%}
+.hero-vis .foto{position:absolute;inset:12%;border-radius:50%;overflow:hidden;box-shadow:0 40px 80px -40px rgba(0,105,180,.6);border:10px solid #fff}
+.hero-vis .foto img{width:100%;height:100%;object-fit:cover;transform:scale(1.15);animation:respira 14s ease-in-out infinite alternate}
+@keyframes respira{to{transform:scale(1.02) translate(-2%,1%)}}
+.pontos{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.pontos circle{transform-box:fill-box;transform-origin:center;animation:flutua var(--t,6s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+@keyframes flutua{0%{transform:translate(0,0) scale(1)}100%{transform:translate(var(--x,4px),var(--y,-6px)) scale(var(--s,1.15))}}
+.selo-flut{position:absolute;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(15,42,68,.4);display:flex;align-items:center;gap:12px;font-family:var(--tit);font-weight:800;font-size:15px;animation:boia 5s ease-in-out infinite alternate}
+.selo-flut small{display:block;font-family:var(--txt);font-weight:600;font-size:12px;color:var(--mudo)}
+.selo-flut .bola{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--ciano-cl);color:var(--azul)}
+.selo-flut .bola svg{width:20px;height:20px}
+.sf1{left:-4%;bottom:14%}.sf2{right:-2%;top:12%;animation-delay:-2.5s}
+@keyframes boia{to{transform:translateY(-12px)}}
+.numeros{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:70px}
+.num{background:#fff;border:1px solid var(--linha);border-radius:var(--r);padding:22px 24px}
+.num b{display:block;font-family:var(--tit);font-weight:900;font-size:clamp(28px,3vw,38px);color:var(--azul);line-height:1.1}
+.num>span{font-size:14px;color:var(--mudo)}
+
+/* faixa aplicações */
+.faixa{background:var(--azul);color:#fff;overflow:hidden;padding:20px 0}
+.trilho{display:flex;width:max-content;animation:desliza 55s linear infinite}
+.faixa:hover .trilho{animation-play-state:paused}
+.trilho span{font-family:var(--tit);font-weight:800;font-size:clamp(18px,2vw,24px);white-space:nowrap;display:flex;align-items:center;gap:34px;padding-right:34px}
+.trilho span::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--ciano)}
+.trilho span:nth-child(3n)::after{background:#B9C3CC}
+@keyframes desliza{to{transform:translateX(-50%)}}
+
+/* empresa */
+.emp-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.emp-fotos{position:relative;aspect-ratio:5/4.6}
+.emp-fotos img{position:absolute;object-fit:cover;border-radius:var(--r);box-shadow:0 30px 60px -34px rgba(15,42,68,.5)}
+.emp-fotos .f1{left:0;top:0;width:82%;height:64%}
+.emp-fotos .f2{right:0;bottom:0;width:62%;height:50%;border:8px solid #fff}
+.emp-fotos .bolha{position:absolute;left:6%;bottom:6%;width:150px;height:150px;border-radius:50%;background:var(--ciano);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--tit);box-shadow:0 20px 40px -18px rgba(75,191,234,.9);animation:boia 6s ease-in-out infinite alternate}
+.emp-fotos .bolha b{font-size:34px;font-weight:900;line-height:1}
+.emp-fotos .bolha small{font-size:13px;font-weight:700;line-height:1.25;margin-top:4px}
+.emp-txt p+p{margin-top:14px}
+.emp-txt .lead{margin-bottom:14px}
+.difs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.dif{background:var(--fundo);border-radius:14px;padding:18px 16px;text-align:center;transition:transform .3s,background .3s}
+.dif:hover{transform:translateY(-4px);background:var(--ciano-cl)}
+.dif svg{width:34px;height:34px;color:var(--azul);margin:0 auto 10px}
+.dif b{font-family:var(--tit);font-weight:800;font-size:16px;display:block}
+.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:70px}
+.mvv article{border-radius:var(--r);padding:30px 28px;background:#fff;border:1px solid var(--linha);position:relative;overflow:hidden}
+.mvv article::before{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;background:var(--ciano-cl);transition:transform .6s}
+.mvv article:hover::before{transform:scale(1.6)}
+.mvv h3{font-size:22px;color:var(--azul);margin-bottom:8px;position:relative}
+.mvv p,.mvv ul{position:relative;font-size:15px;color:var(--mudo)}
+.mvv ul{list-style:none;display:grid;gap:4px}
+.mvv li b{color:var(--tinta)}
+
+/* o que é */
+.oque{background:var(--fundo)}
+.oque .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center}
+.oque-img{border-radius:50% 50% var(--r) var(--r);overflow:hidden;aspect-ratio:4/4.3;box-shadow:0 40px 70px -40px rgba(15,42,68,.55)}
+.oque-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.oque-img:hover img{transform:scale(1.06) rotate(-1deg)}
+.check{list-style:none;display:grid;gap:14px;margin-top:26px}
+.check li{display:flex;gap:14px;align-items:flex-start}
+.check li span{flex:none;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--azul);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -8px rgba(0,105,180,.6)}
+.check li span svg{width:16px;height:16px}
+.check b{font-family:var(--tit);font-weight:800}
+.check small{display:block;color:var(--mudo);font-size:15px}
+
+/* aplicações */
+.apl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.abas{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 30px}
+.abas button{padding:11px 20px;border-radius:999px;border:2px solid var(--linha);font-family:var(--tit);font-weight:800;font-size:15px;color:var(--mudo);transition:all .25s;display:flex;align-items:center;gap:8px}
+.abas button svg{width:18px;height:18px}
+.abas button[aria-selected="true"]{background:var(--azul);border-color:var(--azul);color:#fff}
+.abas button:not([aria-selected="true"]):hover{border-color:var(--ciano);color:var(--azul)}
+.painel{display:none;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center;background:var(--fundo);border-radius:28px;padding:clamp(26px,4vw,48px)}
+.painel.on{display:grid;animation:entra .55s cubic-bezier(.2,.7,.2,1)}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.painel h3{font-size:30px;margin-bottom:10px}
+.painel p{color:var(--mudo);margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{background:#fff;border:1px solid var(--linha);padding:7px 13px;border-radius:999px;font-size:14px;font-weight:600}
+.circulos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.circulos figure{aspect-ratio:1;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 14px 30px -20px rgba(15,42,68,.5);transition:transform .35s}
+.circulos figure:hover{transform:scale(1.07) rotate(-3deg)}
+.circulos img{width:100%;height:100%;object-fit:cover}
+.painel-ilus{display:flex;align-items:center;justify-content:center}
+.painel-ilus .ic-grande{width:min(260px,70%);aspect-ratio:1;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--azul);box-shadow:0 30px 60px -36px rgba(0,105,180,.6);position:relative}
+.painel-ilus .ic-grande svg{width:44%;height:44%}
+.painel-ilus .ic-grande::before,.painel-ilus .ic-grande::after{content:"";position:absolute;border-radius:50%;background:var(--ciano);opacity:.9}
+.painel-ilus .ic-grande::before{width:30px;height:30px;left:4%;top:12%;animation:boia 4s ease-in-out infinite alternate}
+.painel-ilus .ic-grande::after{width:18px;height:18px;right:8%;bottom:10%;background:var(--cinza);animation:boia 5s ease-in-out infinite alternate-reverse}
+
+/* cores */
+.cores{background:linear-gradient(180deg,var(--fundo),#fff)}
+.cores .wrap>.rv:first-child{text-align:center;max-width:720px;margin:0 auto}
+.cores .lead{margin:0 auto}
+.catalogo{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;margin-top:50px;align-items:center}
+.vitrine{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:3/2;background:#eee;box-shadow:0 40px 70px -40px rgba(15,42,68,.55)}
+.vitrine img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.vitrine img.sai{opacity:0;transform:scale(1.05)}
+.vitrine .rot{position:absolute;left:18px;bottom:18px;background:rgba(255,255,255,.94);border-radius:14px;padding:12px 18px;font-family:var(--tit);display:flex;align-items:center;gap:12px}
+.vitrine .rot i{width:28px;height:28px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--linha)}
+.vitrine .rot b{display:block;font-size:19px;font-weight:800;line-height:1.1}
+.vitrine .rot small{font-family:var(--txt);font-size:13px;color:var(--mudo);font-weight:600}
+.paleta{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.paleta button{aspect-ratio:1;border-radius:50%;background:var(--c);position:relative;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 8px 16px -10px rgba(0,0,0,.4);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.paleta button:hover{transform:scale(1.12)}
+.paleta button[aria-pressed="true"]{transform:scale(1.12);box-shadow:0 0 0 3px #fff,0 0 0 6px var(--azul),0 10px 20px -10px rgba(0,0,0,.5)}
+.paleta button span{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);font-size:11px;font-weight:700;color:var(--mudo);white-space:nowrap;opacity:0;transition:opacity .2s;pointer-events:none}
+.paleta button:hover span{opacity:1}
+.cat-info{margin-top:30px;font-size:14px;color:var(--mudo)}
+
+/* medidas */
+.med-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+.med{border-radius:24px;padding:30px 28px 32px;background:#fff;border:1px solid var(--linha);position:relative;overflow:hidden}
+.med::before{content:"";position:absolute;left:0;top:0;right:0;height:6px;background:var(--cor)}
+.med .ic{width:52px;height:52px;border-radius:16px;background:var(--fundo);display:flex;align-items:center;justify-content:center;color:var(--cor);margin-bottom:18px}
+.med .ic svg{width:28px;height:28px}
+.med h3{font-size:24px;margin-bottom:4px}
+.med>p{font-size:14px;color:var(--mudo);margin-bottom:18px}
+.vals{display:flex;flex-wrap:wrap;gap:8px}
+.vals span{font-family:var(--tit);font-weight:800;font-size:16px;padding:8px 14px;border-radius:12px;background:var(--fundo);color:var(--tinta);transition:background .2s,color .2s,transform .2s}
+.vals span:hover{background:var(--cor);color:#fff;transform:translateY(-2px)}
+.vals span small{font-family:var(--txt);font-weight:600;font-size:12px;opacity:.7;margin-left:2px}
+.sob-medida{margin-top:26px;display:flex;align-items:center;gap:18px;background:var(--ciano-cl);border-radius:20px;padding:20px 24px;flex-wrap:wrap}
+.sob-medida p{flex:1;min-width:240px;font-weight:600}
+.sob-medida svg{width:34px;height:34px;color:var(--azul);flex:none}
+
+/* estrutura */
+.estr{background:var(--tinta);color:#fff;overflow:hidden}
+.estr .tag{color:var(--ciano)}
+.estr .lead{color:#A9BBCC}
+.estr h2 span{color:var(--ciano)}
+.mosaico{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 230px;gap:14px;margin-top:50px}
+.mosaico figure{border-radius:var(--r);overflow:hidden;position:relative;cursor:zoom-in}
+.mosaico figure:first-child{grid-column:span 2}
+.mosaico img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.mosaico figure:hover img{transform:scale(1.07)}
+.mosaico figcaption{position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.95);color:var(--tinta);font-family:var(--tit);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
+
+/* orcamento */
+.orc .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:start}
+.passos{list-style:none;display:grid;gap:18px;margin-top:30px;counter-reset:p}
+.passos li{display:flex;gap:16px;align-items:flex-start}
+.passos li::before{counter-increment:p;content:counter(p);flex:none;width:40px;height:40px;border-radius:50%;background:var(--azul);color:#fff;font-family:var(--tit);font-weight:900;display:flex;align-items:center;justify-content:center}
+.passos b{font-family:var(--tit);font-weight:800;display:block}
+.passos small{color:var(--mudo);font-size:15px}
+form{background:#fff;border:1px solid var(--linha);border-radius:28px;padding:clamp(24px,4vw,40px);box-shadow:0 40px 80px -50px rgba(15,42,68,.55)}
+form h3{font-size:28px;margin-bottom:4px}
+form>p{color:var(--mudo);font-size:15px;margin-bottom:22px}
+.campos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.campo{display:flex;flex-direction:column;gap:6px}
+.campo.full{grid-column:1/-1}
+.campo label{font-size:13px;font-weight:700}
+.campo input,.campo select,.campo textarea{font:inherit;font-size:15px;padding:13px 15px;border:2px solid var(--linha);border-radius:12px;background:var(--fundo);color:var(--tinta);width:100%;transition:border-color .2s,background .2s}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--ciano);background:#fff}
+.campo textarea{min-height:90px;resize:vertical}
+.cor-sel{display:flex;align-items:center;gap:10px}
+.cor-sel i{width:22px;height:22px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.12)}
+form .btn{width:100%;justify-content:center;margin-top:20px;padding:17px}
+form .nota{font-size:12px;color:var(--mudo);text-align:center;margin-top:10px}
+
+/* contato */
+.contato{background:var(--fundo);padding-bottom:0}
+.cont-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:30px;margin-top:40px;padding-bottom:clamp(80px,10vw,120px)}
+.cards{display:grid;gap:14px}
+.card{display:flex;gap:16px;align-items:flex-start;background:#fff;border-radius:18px;padding:20px 22px;border:1px solid var(--linha);transition:border-color .2s,transform .2s}
+a.card:hover{border-color:var(--ciano);transform:translateX(4px)}
+.card .ic{width:44px;height:44px;border-radius:50%;background:var(--ciano-cl);color:var(--azul);display:flex;align-items:center;justify-content:center;flex:none}
+.card .ic svg{width:22px;height:22px}
+.card small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mudo);font-weight:700}
+.card b{font-family:var(--tit);font-weight:800;font-size:16px;line-height:1.4}
+.card .fones{display:grid;gap:2px}
+.mapa{border-radius:24px;overflow:hidden;min-height:420px;border:1px solid var(--linha);background:#e9eef2}
+.mapa iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
+/* footer */
+footer{background:var(--tinta);color:#A9BBCC;padding:60px 0 30px;font-size:14px}
+.ft{display:grid;grid-template-columns:1.4fr 1fr 1.2fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ft-logo{background:#fff;border-radius:16px;padding:14px 18px;display:inline-block;margin-bottom:16px}
+.ft-logo img{height:56px;width:auto}
+.ft h4{color:#fff;font-family:var(--tit);font-size:15px;margin-bottom:14px}
+.ft ul{list-style:none;display:grid;gap:8px}
+.ft a:hover{color:#fff}
+.copy{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+
+/* zap flutuante */
+.wpp{position:fixed;right:22px;bottom:22px;z-index:70;width:60px;height:60px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.4);transition:transform .2s}
+.wpp:hover{transform:scale(1.08)}
+.wpp svg{width:32px;height:32px}
+.wpp::before{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25D366;animation:onda 2.8s ease-out infinite}
+@keyframes onda{0%{transform:scale(1);opacity:.7}70%,100%{transform:scale(1.6);opacity:0}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,24,40,.92);display:none;align-items:center;justify-content:center;padding:60px 20px;opacity:0;transition:opacity .3s}
+.lb.on{display:flex;opacity:1}
+.lb img{max-height:84vh;max-width:min(1100px,100%);border-radius:16px;animation:entra .4s ease}
+.lb button{position:absolute;top:16px;right:16px;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center}
+.lb button svg{width:26px;height:26px}
+
+/* revelar */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+.hero .ent{opacity:0;transform:translateY(24px);animation:sobe .9s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
+@keyframes sobe{to{opacity:1;transform:none}}
+.hero-vis.ent{transform:scale(.92)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.hero .ent{opacity:1;transform:none}}
+
+/* responsivo */
+@media (max-width:1000px){
+  .menu{position:fixed;inset:70px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:6px 28px 24px;box-shadow:0 20px 40px -20px rgba(15,42,68,.4);transform:translateY(-10px);opacity:0;pointer-events:none;transition:all .25s}
+  .menu.on{transform:none;opacity:1;pointer-events:auto}
+  .menu a:not(.btn){padding:14px 0;border-bottom:1px solid var(--linha);font-size:17px}
+  .menu a:not(.btn)::after{display:none}
+  .menu .btn{margin-top:16px;justify-content:center}
+  .hamb{display:flex}
+  header .wrap,header.solid .wrap{height:70px}
+  .hero-grid,.emp-grid,.oque .wrap,.catalogo,.orc .wrap,.cont-grid,.painel{grid-template-columns:1fr}
+  .hero-vis{justify-self:center;max-width:440px}
+  .numeros{grid-template-columns:1fr 1fr}
+  .mvv,.med-grid{grid-template-columns:1fr}
+  .ft{grid-template-columns:1fr 1fr}.ft>div:first-child{grid-column:1/-1}
+  .mosaico{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:200px}
+}
+@media (max-width:600px){
+  .wrap{padding:0 20px}
+  .hero{padding-top:110px}
+  .marca img,header.solid .marca img{height:40px}
+  .ctas{flex-direction:column}.ctas .btn{justify-content:center}
+  .sf1{left:0;bottom:4%}.sf2{right:0;top:4%}
+  .selo-flut{padding:10px 12px;font-size:13px}.selo-flut .bola{width:30px;height:30px}
+  .difs{grid-template-columns:1fr}
+  .campos{grid-template-columns:1fr}
+  .paleta{grid-template-columns:repeat(6,1fr);gap:9px}
+  .circulos{grid-template-columns:repeat(4,1fr);gap:8px}
+  .ft{grid-template-columns:1fr}
+  .emp-fotos .bolha{width:116px;height:116px}.emp-fotos .bolha b{font-size:26px}
+  .mosaico{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:200px}
+  .mosaico figure:first-child{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<header id="topo">
+  <div class="wrap">
+    <a href="#inicio" class="marca" aria-label="New TNT, início"><img src="img/logo-newtnt.png" alt="New TNT — Alto padrão em não tecidos"></a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#empresa">A Empresa</a>
+      <a href="#aplicacoes">Aplicações</a>
+      <a href="#cores">Cores</a>
+      <a href="#medidas">Medidas</a>
+      <a href="#contato">Contato</a>
+      <a href="#orcamento" class="btn btn-azul">Fazer pedido</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag ent" style="--d:.1s"><i><b></b><b></b><b></b></i>Indústria 100% nacional</span>
+      <h1 class="ent" style="--d:.25s">TNT de <span class="c">alto padrão</span>, direto da <span class="a">fábrica</span> para a sua produção.</h1>
+      <p class="ent" style="--d:.4s">A NEWTNT fabrica e distribui tecido não tecido em rolos, em 18 cores e gramaturas de 20 a 150 g/m², com material virgem, sem mistura, e entrega para todo o Brasil.</p>
+      <div class="ctas ent" style="--d:.55s">
+        <a class="btn btn-azul" href="#orcamento">Solicitar orçamento
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-linha" href="#cores">Ver cores</a>
+      </div>
+    </div>
+    <div class="hero-vis ent" style="--d:.3s">
+      <svg class="pontos" id="pontos" viewBox="0 0 500 500" aria-hidden="true"></svg>
+      <div class="foto"><img src="img/estoque-rolos.jpg" alt="Estoque da New TNT com rolos de TNT coloridos"></div>
+      <div class="selo-flut sf1"><span class="bola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg></span><span>Entrega nacional<small>Rapidez com logística própria</small></span></div>
+      <div class="selo-flut sf2"><span class="bola"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"/></svg></span><span>Atóxico<small>Material virgem, sem mistura</small></span></div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="numeros">
+      <div class="num rv"><b><span data-n="5000" data-sep="1">5.000</span> m²</b><span>de parque fabril em Saquarema/RJ</span></div>
+      <div class="num rv"><b><span data-n="18">18</span> cores</b><span>disponíveis em estoque</span></div>
+      <div class="num rv"><b><span data-n="20">20</span>–<span data-n="150">150</span> g/m²</b><span>de gramatura</span></div>
+      <div class="num rv"><b>até <span data-n="4000" data-sep="1">4.000</span> m</b><span>por rolo, ou sob medida</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="faixa" aria-hidden="true"><div class="trilho" id="trilho"></div></div>
+
+<section class="emp" id="empresa">
+  <div class="wrap emp-grid">
+    <div class="emp-fotos rv">
+      <img class="f1" src="img/fabrica-aerea.jpg" alt="Vista aérea da fábrica da New TNT no Polo Industrial de Sampaio Correia" loading="lazy">
+      <img class="f2" src="img/estoque-1.jpg" alt="Área de estoque com rolos de TNT" loading="lazy">
+      <div class="bolha"><b>100%</b><small>empresa<br>nacional</small></div>
+    </div>
+    <div class="emp-txt rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>A Empresa</span>
+      <h2>Tradição e tecnologia em <span>não tecidos</span></h2>
+      <p class="lead">A NEWTNT Indústria de Tecidos é fabricante e distribuidora de não tecidos, com representantes e logística para atender todo o território nacional.</p>
+      <p>Nosso parque fabril, com 5.000 m² de área construída, fica no Polo Industrial de Sampaio Correia, em Saquarema/RJ. Com maquinário moderno, produzimos conforme a necessidade de cada cliente e mantemos em estoque uma ampla gama de produtos prontos para distribuição.</p>
+      <p>Da aquisição da matéria-prima à entrega, nossos processos seguem padrões uniformes de qualidade, garantindo a rastreabilidade integral da produção.</p>
+      <div class="difs">
+        <div class="dif"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9z"/></svg><b>Qualidade</b></div>
+        <div class="dif"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8" cy="8" r="1.4"/></svg><b>Preço competitivo</b></div>
+        <div class="dif"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg><b>Rapidez na entrega</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="mvv">
+      <article class="rv"><h3>Visão</h3><p>Ser a melhor opção em produtos da linha Tecidos Não Tecidos e afins.</p></article>
+      <article class="rv"><h3>Missão</h3><p>Contribuir de forma significativa para um ambiente saudável e limpo, com a entrega de produtos comprovadamente atóxicos.</p></article>
+      <article class="rv"><h3>Valores</h3><ul><li><b>Integridade</b> · honestidade e justiça</li><li><b>Confiança</b> · compromisso com o que prometemos</li><li><b>Cooperação</b> · espírito integrado</li><li><b>Energia</b> · para inovar sempre</li></ul></article>
+    </div>
+  </div>
+</section>
+
+<section class="oque" id="tnt">
+  <div class="wrap">
+    <div class="oque-img rv"><img src="img/textura-tnt.jpg" alt="Tecidos não tecidos coloridos em detalhe" loading="lazy"></div>
+    <div class="rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>O que é TNT</span>
+      <h2>Versátil, leve e <span>ecológico</span></h2>
+      <p class="lead">O Tecido Não Tecido é produzido a partir de fibras aglomeradas e fixadas, sem passar por fiação, tecelagem ou malharia. O resultado é um material leve, resistente e de baixo custo, que favorece a biodegradação.</p>
+      <ul class="check">
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Material virgem, sem mistura</b><small>Mais durabilidade, robustez, beleza e higiene.</small></div></li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Orientado para uso humano</b><small>Produtos atóxicos, com sistema de qualidade próprio.</small></div></li>
+        <li><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Produção sob medida</b><small>Cor, metragem, largura e gramatura conforme sua necessidade.</small></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="apl" id="aplicacoes">
+  <div class="wrap">
+    <div class="apl-head rv">
+      <div>
+        <span class="tag"><i><b></b><b></b><b></b></i>Aplicações</span>
+        <h2>Um material, <span>muitos mercados</span></h2>
+      </div>
+      <p class="lead">Nossos rolos abastecem fabricantes de diversos segmentos. Escolha o seu:</p>
+    </div>
+    <div class="abas rv" role="tablist" aria-label="Segmentos">
+      <button role="tab" aria-selected="true" aria-controls="p-saude" id="t-saude"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Saúde e higiene</button>
+      <button role="tab" aria-selected="false" aria-controls="p-casa" id="t-casa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7v9H3z"/></svg>Casa e estofados</button>
+      <button role="tab" aria-selected="false" aria-controls="p-moda" id="t-moda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 3 6l2 5 2-1v11h10V10l2 1 2-5-5-3a4 4 0 0 1-8 0z"/></svg>Vestuário e calçados</button>
+      <button role="tab" aria-selected="false" aria-controls="p-emb" id="t-emb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg>Embalagens e sacolas</button>
+      <button role="tab" aria-selected="false" aria-controls="p-auto" id="t-auto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16V11l2-5h10l2 5v5H5zM3 16h18"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></svg>Automotivo</button>
+      <button role="tab" aria-selected="false" aria-controls="p-agro" id="t-agro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10M12 10c0-4 3-6 7-6 0 4-3 6-7 6zM12 13c0-3-2-5-6-5 0 3 2 5 6 5z"/></svg>Agro e eventos</button>
+    </div>
+    <div class="painel on" id="p-saude" role="tabpanel" aria-labelledby="t-saude">
+      <div>
+        <h3>Saúde e higiene</h3>
+        <p>TNT atóxico, ideal para descartáveis hospitalares, estética e proteção individual.</p>
+        <div class="chips"><span>Toucas</span><span>Máscaras</span><span>Propés</span><span>Aventais</span><span>Roupas hospitalares</span><span>Bandagens</span><span>Roupas de proteção</span><span>Faixas para depilação</span><span>Fraldas e absorventes</span></div>
+      </div>
+      <div class="circulos">
+        <figure><img src="img/aplic-1.jpg" alt="Propés de TNT" loading="lazy"></figure>
+        <figure><img src="img/aplic-2.jpg" alt="Touca de TNT" loading="lazy"></figure>
+        <figure><img src="img/aplic-3.jpg" alt="Propés azul" loading="lazy"></figure>
+        <figure><img src="img/aplic-5.jpg" alt="Avental hospitalar" loading="lazy"></figure>
+        <figure><img src="img/aplic-4.jpg" alt="Faixas de TNT coloridas" loading="lazy"></figure>
+        <figure><img src="img/aplic-6.jpg" alt="Máscaras descartáveis" loading="lazy"></figure>
+        <figure><img src="img/aplic-7.jpg" alt="Toucas descartáveis" loading="lazy"></figure>
+        <figure><img src="img/textura-tnt.jpg" alt="TNT colorido" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="painel" id="p-casa" role="tabpanel" aria-labelledby="t-casa">
+      <div><h3>Casa e estofados</h3><p>Forração e acabamento para indústria moveleira e artigos para o lar.</p>
+        <div class="chips"><span>Forração de estofados</span><span>Cadeiras e poltronas de escritório</span><span>Capas para sofá</span><span>Capas para travesseiros</span><span>Cama e mesa</span><span>Jogo americano</span><span>Conjunto para banheiro</span></div></div>
+      <div class="painel-ilus"><div class="ic-grande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11V8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v3M2 12a2 2 0 0 1 4 0v3h12v-3a2 2 0 0 1 4 0v5H2zM5 17v2M19 17v2"/></svg></div></div>
+    </div>
+    <div class="painel" id="p-moda" role="tabpanel" aria-labelledby="t-moda">
+      <div><h3>Vestuário e calçados</h3><p>Estrutura e reforço invisível para confecções e calçadistas.</p>
+        <div class="chips"><span>Entretelas</span><span>Bonés</span><span>Jaquetas</span><span>Reforço para calçados</span><span>Protetores de roupas</span><span>Invólucros para calçados</span></div></div>
+      <div class="painel-ilus"><div class="ic-grande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 3 6l2 5 2-1v11h10V10l2 1 2-5-5-3a4 4 0 0 1-8 0z"/></svg></div></div>
+    </div>
+    <div class="painel" id="p-emb" role="tabpanel" aria-labelledby="t-emb">
+      <div><h3>Embalagens e sacolas</h3><p>Sacolas reutilizáveis, brindes e embalagens que valorizam a marca.</p>
+        <div class="chips"><span>Ecobags</span><span>Sacolas para supermercados</span><span>Embalagens para presentes</span><span>Sacos e saches</span><span>Bolsas de viagem</span><span>Forração de bolsas</span><span>Pastas</span><span>Capas para máquinas</span></div></div>
+      <div class="painel-ilus"><div class="ic-grande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 13H6zM9 8V6a3 3 0 0 1 6 0v2"/></svg></div></div>
+    </div>
+    <div class="painel" id="p-auto" role="tabpanel" aria-labelledby="t-auto">
+      <div><h3>Automotivo</h3><p>Acabamento interno e proteção para veículos.</p>
+        <div class="chips"><span>Capas para estofamento de carros</span><span>Revestimento interno de tetos</span><span>Protetores solares (quebra-sol)</span><span>Capas para carro</span></div></div>
+      <div class="painel-ilus"><div class="ic-grande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 16V11l2-5h10l2 5v5H5zM3 16h18"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/></svg></div></div>
+    </div>
+    <div class="painel" id="p-agro" role="tabpanel" aria-labelledby="t-agro">
+      <div><h3>Agro, propaganda e eventos</h3><p>Proteção de cultivo, comunicação visual e decoração.</p>
+        <div class="chips"><span>Proteção de estufas</span><span>Plantações e mudas</span><span>Esteiras capilares</span><span>Faixas e bandeiras</span><span>Painéis</span><span>Artigos de propaganda</span><span>Telas para artistas</span><span>Decoração de festas</span><span>Barracas</span></div></div>
+      <div class="painel-ilus"><div class="ic-grande"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V10M12 10c0-4 3-6 7-6 0 4-3 6-7 6zM12 13c0-3-2-5-6-5 0 3 2 5 6 5z"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cores" id="cores">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>Cartela de cores</span>
+      <h2>18 cores <span>a pronta entrega</span></h2>
+      <p class="lead">Toque em uma cor para ver o rolo. Use a referência (REF.) para agilizar o seu pedido.</p>
+    </div>
+    <div class="catalogo">
+      <div class="vitrine rv" id="vitrine">
+        <img src="img/cores/ref-11.jpg" alt="Rolo de TNT na cor amarelo" id="vit-img">
+        <div class="rot"><i id="vit-cor" style="background:#F6C200"></i><div><b id="vit-nome">Amarelo</b><small id="vit-ref">REF. 11</small></div></div>
+      </div>
+      <div class="rv">
+        <div class="paleta" id="paleta" role="group" aria-label="Cores disponíveis"></div>
+        <p class="cat-info">As cores na tela são aproximadas e podem variar conforme o monitor. Para amostras físicas, fale com a nossa equipe.</p>
+        <a class="btn btn-azul" href="#orcamento" id="pedir-cor" style="margin-top:22px">Pedir esta cor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="medidas" id="medidas">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>Medidas</span>
+      <h2>Metragem, gramatura e <span>largura</span></h2>
+      <p class="lead">As principais medidas comercializadas. Mas a produção não se limita a elas: fabricamos sob medida, conforme a necessidade de cada cliente.</p>
+    </div>
+    <div class="med-grid">
+      <article class="med rv" style="--cor:#E8741C">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="12" r="6"/><circle cx="9" cy="12" r="2"/><path d="M15 12h6v6"/></svg></div>
+        <h3>Metragem</h3><p>Metros por rolo</p>
+        <div class="vals"><span>50<small>m</small></span><span>100<small>m</small></span><span>250<small>m</small></span><span>350<small>m</small></span><span>500<small>m</small></span><span>1.000<small>m</small></span><span>2.500<small>m</small></span><span>4.000<small>m</small></span></div>
+      </article>
+      <article class="med rv" style="--cor:#1F87A0">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20l2-12h8l2 12M12 4v4"/></svg></div>
+        <h3>Gramatura</h3><p>Gramas por metro quadrado</p>
+        <div class="vals"><span>20<small>g/m²</small></span><span>30<small>g/m²</small></span><span>35<small>g/m²</small></span><span>40<small>g/m²</small></span><span>60<small>g/m²</small></span><span>80<small>g/m²</small></span><span>100<small>g/m²</small></span><span>120<small>g/m²</small></span><span>150<small>g/m²</small></span></div>
+      </article>
+      <article class="med rv" style="--cor:#7A5A9E">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 12l3-3M3 12l3 3M21 12l-3-3M21 12l-3 3"/></svg></div>
+        <h3>Largura</h3><p>Até, em metros</p>
+        <div class="vals"><span>1,40<small>m</small></span><span>1,50<small>m</small></span><span>1,55<small>m</small></span><span>1,70<small>m</small></span></div>
+      </article>
+    </div>
+    <div class="sob-medida rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>
+      <p>Precisa de uma medida diferente? Produzimos rolos sob medida em cor, metragem, largura e gramatura.</p>
+      <a class="btn btn-azul" href="#orcamento">Pedir sob medida</a>
+    </div>
+  </div>
+</section>
+
+<section class="estr" id="estrutura">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>Nossa estrutura</span>
+      <h2>Estoque pronto para <span>abastecer você</span></h2>
+      <p class="lead">Fábrica própria e estoque organizado para atender pedidos com agilidade, de pequenas a grandes quantidades.</p>
+    </div>
+    <div class="mosaico" id="mosaico">
+      <figure class="rv"><img src="img/fabrica-aerea-2.jpg" alt="Vista aérea do parque fabril" loading="lazy"><figcaption>Parque fabril · 5.000 m²</figcaption></figure>
+      <figure class="rv"><img src="img/estoque-2.jpg" alt="Prateleiras com rolos de TNT" loading="lazy"><figcaption>Estoque</figcaption></figure>
+      <figure class="rv"><img src="img/estoque-3.jpg" alt="Rolos de TNT em diversas cores" loading="lazy"><figcaption>Variedade de cores</figcaption></figure>
+      <figure class="rv"><img src="img/estoque-4.jpg" alt="Rolos de TNT prontos para envio" loading="lazy"><figcaption>Pronta entrega</figcaption></figure>
+      <figure class="rv"><img src="img/estoque-1.jpg" alt="Galpão de estoque com rolos coloridos" loading="lazy"><figcaption>Logística</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="orc" id="orcamento">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>Como comprar</span>
+      <h2>Faça seu pedido em <span>poucos passos</span></h2>
+      <p class="lead">Monte o pedido ao lado e envie direto para o WhatsApp do nosso comercial.</p>
+      <ol class="passos">
+        <li><div><b>Escolha cor e medidas</b><small>Use a cartela de cores e as tabelas de medidas.</small></div></li>
+        <li><div><b>Envie o pedido</b><small>O formulário monta a mensagem e abre o WhatsApp.</small></div></li>
+        <li><div><b>Receba a proposta</b><small>Nossa equipe retorna com valores e prazo de entrega.</small></div></li>
+      </ol>
+    </div>
+    <form id="form" class="rv" novalidate>
+      <h3>Solicite seu orçamento</h3>
+      <p>Preencha o que já souber. O restante combinamos no atendimento.</p>
+      <div class="campos">
+        <div class="campo"><label for="f-nome">Nome</label><input id="f-nome" autocomplete="name" placeholder="Seu nome" required></div>
+        <div class="campo"><label for="f-emp">Empresa</label><input id="f-emp" autocomplete="organization" placeholder="Nome da empresa"></div>
+        <div class="campo"><label for="f-cid">Cidade / UF</label><input id="f-cid" placeholder="Ex.: Niterói / RJ"></div>
+        <div class="campo"><label for="f-apl">Aplicação</label><select id="f-apl"><option>Saúde e higiene</option><option>Casa e estofados</option><option>Vestuário e calçados</option><option>Embalagens e sacolas</option><option>Automotivo</option><option>Agro e eventos</option><option>Outra</option></select></div>
+        <div class="campo"><label for="f-cor">Cor</label><div class="cor-sel"><i id="f-cor-i" style="background:#F6C200"></i><select id="f-cor"></select></div></div>
+        <div class="campo"><label for="f-gram">Gramatura</label><select id="f-gram"><option>Não sei ainda</option><option>20 g/m²</option><option>30 g/m²</option><option>35 g/m²</option><option>40 g/m²</option><option>60 g/m²</option><option>80 g/m²</option><option>100 g/m²</option><option>120 g/m²</option><option>150 g/m²</option></select></div>
+        <div class="campo"><label for="f-larg">Largura</label><select id="f-larg"><option>Não sei ainda</option><option>até 1,40 m</option><option>até 1,50 m</option><option>até 1,55 m</option><option>até 1,70 m</option><option>Sob medida</option></select></div>
+        <div class="campo"><label for="f-met">Metragem do rolo</label><select id="f-met"><option>Não sei ainda</option><option>50 m</option><option>100 m</option><option>250 m</option><option>350 m</option><option>500 m</option><option>1.000 m</option><option>2.500 m</option><option>4.000 m</option></select></div>
+        <div class="campo full"><label for="f-msg">Quantidade e observações</label><textarea id="f-msg" placeholder="Quantidade de rolos, prazo desejado…"></textarea></div>
+      </div>
+      <button class="btn btn-zap" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>Enviar pedido pelo WhatsApp</button>
+      <p class="nota">O WhatsApp abre com a mensagem pronta para você revisar e enviar.</p>
+    </form>
+  </div>
+</section>
+
+<section class="contato" id="contato">
+  <div class="wrap">
+    <div class="rv">
+      <span class="tag"><i><b></b><b></b><b></b></i>Contato</span>
+      <h2>Fale com a <span>New TNT</span></h2>
+    </div>
+    <div class="cont-grid">
+      <div class="cards rv">
+        <a class="card" href="https://api.whatsapp.com/send?phone=5522999950154" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></span><span><small>WhatsApp</small><b>(22) 99995-0154</b></span></a>
+        <div class="card"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span><small>Telefones</small><span class="fones"><b><a href="tel:+552140404249">(21) 4040-4249</a></b><b><a href="tel:+552226542519">(22) 2654-2519</a></b><b><a href="tel:+5522999339270">(22) 99933-9270</a></b></span></span></div>
+        <a class="card" href="mailto:sac@newtnt.com.br"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small>E-mail</small><b>sac@newtnt.com.br</b></span></a>
+        <a class="card" href="https://www.google.com/maps/search/?api=1&query=Rod.+Amaral+Peixoto+RJ-106+km+54+Sampaio+Correia+Saquarema+RJ" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span><span><small>Fábrica</small><b>Rod. Amaral Peixoto, RJ-106, km 54 · Quadra E, lotes 02/03<br>Sampaio Correia, Saquarema/RJ · CEP 28997-000</b></span></a>
+      </div>
+      <div class="mapa rv"><iframe title="Mapa da fábrica New TNT" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Rod.+Amaral+Peixoto+RJ-106+km+54+Sampaio+Correia+Saquarema+RJ&output=embed"></iframe></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <span class="ft-logo"><img src="img/logo-newtnt.png" alt="New TNT"></span>
+        <p>NEWTNT Indústria de Tecidos Ltda<br>Fabricante e distribuidora de não tecidos.<br>CNPJ 17.441.927/0001-60</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul><li><a href="#empresa">A Empresa</a></li><li><a href="#aplicacoes">Aplicações</a></li><li><a href="#cores">Cores</a></li><li><a href="#medidas">Medidas</a></li><li><a href="#orcamento">Como comprar</a></li></ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul><li><a href="https://api.whatsapp.com/send?phone=5522999950154" target="_blank" rel="noopener">WhatsApp (22) 99995-0154</a></li><li>(21) 4040-4249 · (22) 2654-2519</li><li><a href="mailto:sac@newtnt.com.br">sac@newtnt.com.br</a></li><li>Sampaio Correia · Saquarema/RJ</li></ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="ano">2026</span> NEWTNT Indústria de Tecidos Ltda. Todos os direitos reservados.</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </div>
+</footer>
+
+<a class="wpp" href="https://api.whatsapp.com/send?phone=5522999950154&text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento%20de%20TNT." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7c.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>
+</a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button><img alt=""></div>
+
+<script>
+(function(){
+  var reduz=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var WPP='5522999950154';
+  var CORES=[[11,'Amarelo','#F6C200'],[15,'Azul Celeste','#8CC4EA'],[18,'Azul Marinho','#2B2F6B'],[20,'Azul Royal','#0A87C9'],[24,'Bege','#A68E6A'],[28,'Branco','#F4F5F7'],[31,'Cinza Claro','#7A7A7A'],[32,'Laranja','#F7801E'],[36,'Lilás','#C87ED6'],[41,'Marrom','#4A3A33'],[45,'Pink','#E0157A'],[49,'Preto','#1E1E1E'],[54,'Rosa Bebê','#F4A9C4'],[58,'Verde Bandeira','#009A5E'],[64,'Verde Claro','#4FBF95'],[66,'Verde Limão','#B5D82A'],[69,'Vermelho','#E8163A'],[74,'Violeta','#7B2D93']];
+
+  // header + menu
+  var h=document.getElementById('topo'),menu=document.getElementById('menu'),hb=document.getElementById('hamb');
+  function solid(){h.classList.toggle('solid',scrollY>30)} solid(); addEventListener('scroll',solid,{passive:true});
+  hb.addEventListener('click',function(){var on=menu.classList.toggle('on');hb.setAttribute('aria-expanded',on)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('on');hb.setAttribute('aria-expanded',false)})});
+  document.getElementById('ano').textContent=new Date().getFullYear();
+
+  // menu ativo
+  var secs=['empresa','aplicacoes','cores','medidas','contato'].map(function(id){return document.getElementById(id)});
+  addEventListener('scroll',function(){var y=scrollY+140,at=null;secs.forEach(function(s){if(s.offsetTop<=y)at=s.id});menu.querySelectorAll('a:not(.btn)').forEach(function(a){a.classList.toggle('ativo',a.getAttribute('href')==='#'+at)})},{passive:true});
+
+  // pontos do hero (anel como no logo)
+  var svg=document.getElementById('pontos'),ns='http://www.w3.org/2000/svg',cols=['#4BBFEA','#0069B4','#8A8A8A'];
+  var aneis=[[238,14,9],[214,22,11],[190,28,13]];
+  aneis.forEach(function(a,ri){
+    for(var i=0;i<a[1];i++){
+      var ang=(i/a[1])*Math.PI*2+ri*.35;
+      var c=document.createElementNS(ns,'circle');
+      var rr=a[2]*(0.6+Math.random()*0.55);
+      c.setAttribute('cx',(250+Math.cos(ang)*a[0]).toFixed(1));c.setAttribute('cy',(250+Math.sin(ang)*a[0]).toFixed(1));
+      c.setAttribute('r',rr.toFixed(1));c.setAttribute('fill',cols[(i+ri)%3]);c.setAttribute('opacity',(0.55+Math.random()*0.45).toFixed(2));
+      c.style.setProperty('--t',(4+Math.random()*5).toFixed(1)+'s');c.style.setProperty('--dl',(-Math.random()*6).toFixed(1)+'s');
+      c.style.setProperty('--x',((Math.random()-.5)*14).toFixed(1)+'px');c.style.setProperty('--y',((Math.random()-.5)*14).toFixed(1)+'px');
+      c.style.setProperty('--s',(0.85+Math.random()*0.4).toFixed(2));
+      svg.appendChild(c);
+    }
+  });
+  if(!reduz){var hv=document.querySelector('.hero-vis');addEventListener('scroll',function(){if(scrollY<900)svg.style.transform='rotate('+(scrollY*0.04)+'deg)'},{passive:true});}
+
+  // faixa
+  var apl=['Toucas','Máscaras','Aventais','Ecobags','Forração de estofados','Entretelas','Capas automotivas','Proteção de estufas','Sacolas','Bandeiras e faixas','Jogo americano','Embalagens'];
+  var html=apl.map(function(x){return '<span>'+x+'</span>'}).join('');document.getElementById('trilho').innerHTML=html+html;
+
+  // reveal + stagger
+  ['.numeros','.mvv','.med-grid','.mosaico','.difs'].forEach(function(g){var w=document.querySelector(g);if(w)[].slice.call(w.children).forEach(function(c,i){c.style.setProperty('--d',(i*0.1)+'s')})});
+  var io='IntersectionObserver' in window&&!reduz?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);conta(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'}):null;
+  document.querySelectorAll('.rv').forEach(function(el){io?io.observe(el):el.classList.add('in')});
+
+  // contadores
+  function fmt(n,sep){n=Math.round(n);return sep?n.toLocaleString('pt-BR'):String(n)}
+  function conta(el){if(reduz)return;el.querySelectorAll('[data-n]').forEach(function(s){var alvo=+s.dataset.n,sep=s.dataset.sep,t0=null;function step(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1400),e=1-Math.pow(1-p,3);s.textContent=fmt(alvo*e,sep);if(p<1)requestAnimationFrame(step)}requestAnimationFrame(step)})}
+
+  // abas
+  var tabs=[].slice.call(document.querySelectorAll('[role=tab]'));
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected',x===t);document.getElementById(x.getAttribute('aria-controls')).classList.toggle('on',x===t)})})});
+
+  // cores
+  var pal=document.getElementById('paleta'),vi=document.getElementById('vit-img'),vc=document.getElementById('vit-cor'),vn=document.getElementById('vit-nome'),vr=document.getElementById('vit-ref');
+  var sel=document.getElementById('f-cor'),seli=document.getElementById('f-cor-i'),atual=0,auto;
+  sel.innerHTML='<option value="">Não sei ainda</option>'+CORES.map(function(c,i){return '<option value="'+i+'">REF. '+c[0]+' · '+c[1]+'</option>'}).join('');
+  CORES.forEach(function(c,i){var b=document.createElement('button');b.style.setProperty('--c',c[2]);b.setAttribute('aria-label','REF. '+c[0]+' '+c[1]);b.setAttribute('aria-pressed',i===0);b.innerHTML='<span>'+c[1]+'</span>';b.addEventListener('click',function(){mostra(i);clearInterval(auto)});pal.appendChild(b);new Image().src='img/cores/ref-'+c[0]+'.jpg'});
+  function mostra(i){atual=i;var c=CORES[i];[].forEach.call(pal.children,function(b,k){b.setAttribute('aria-pressed',k===i)});vi.classList.add('sai');setTimeout(function(){vi.src='img/cores/ref-'+c[0]+'.jpg';vi.alt='Rolo de TNT na cor '+c[1].toLowerCase();vi.classList.remove('sai')},250);vc.style.background=c[2];vn.textContent=c[1];vr.textContent='REF. '+c[0]}
+  if(!reduz){var vit=document.getElementById('cores');var vio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!auto){auto=setInterval(function(){mostra((atual+1)%CORES.length)},2600)}})},{threshold:.3});vio.observe(vit)}
+  document.getElementById('pedir-cor').addEventListener('click',function(){sel.value=atual;seli.style.background=CORES[atual][2]});
+  sel.addEventListener('change',function(){seli.style.background=sel.value===''?'#fff':CORES[+sel.value][2]});
+
+  // lightbox mosaico
+  var lb=document.getElementById('lb'),li=lb.querySelector('img');
+  document.querySelectorAll('.mosaico figure').forEach(function(f){f.addEventListener('click',function(){var im=f.querySelector('img');li.src=im.src;li.alt=im.alt;lb.classList.add('on')})});
+  lb.addEventListener('click',function(e){if(e.target!==li)lb.classList.remove('on')});
+  addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+
+  // formulário -> WhatsApp
+  document.getElementById('form').addEventListener('submit',function(e){
+    e.preventDefault();var g=function(id){return document.getElementById(id).value.trim()};
+    if(!g('f-nome')){document.getElementById('f-nome').focus();return}
+    var cor=sel.value===''?'Não sei ainda':'REF. '+CORES[+sel.value][0]+' · '+CORES[+sel.value][1];
+    var l=['Olá! Vim pelo site e gostaria de um orçamento de TNT.','','*Nome:* '+g('f-nome')];
+    if(g('f-emp'))l.push('*Empresa:* '+g('f-emp'));if(g('f-cid'))l.push('*Cidade:* '+g('f-cid'));
+    l.push('*Aplicação:* '+g('f-apl'),'*Cor:* '+cor,'*Gramatura:* '+g('f-gram'),'*Largura:* '+g('f-larg'),'*Metragem:* '+g('f-met'));
+    if(g('f-msg'))l.push('*Observações:* '+g('f-msg'));
+    window.open('https://api.whatsapp.com/send?phone='+WPP+'&text='+encodeURIComponent(l.join('\n')),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
