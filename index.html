@@ -39,7 +39,7 @@ h2{font-size:clamp(32px,4vw,50px);margin:14px 0 18px}
 .cod::before{content:"";width:22px;height:2px;background:currentColor}
 .cod b{font-weight:600;color:var(--mudo2)}
 .lead{font-size:18px;color:var(--mudo);max-width:60ch}
-section{position:relative;padding:clamp(80px,9vw,120px) 0}
+section{position:relative;padding:clamp(80px,9vw,120px) 0;overflow:clip}
 .btn{display:inline-flex;align-items:center;gap:12px;padding:16px 24px;border-radius:var(--r);font-family:var(--tit);font-weight:600;font-stretch:95%;font-size:16px;letter-spacing:.01em;transition:background .2s,color .2s,border-color .2s,transform .2s}
 .btn svg{width:18px;height:18px;flex:none}
 .btn .seta{transition:transform .25s}
@@ -145,7 +145,7 @@ header.solid .marca img{height:40px}
 /* ficha técnica */
 .spec-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,6vw,80px);align-items:start}
 .spec-intro .btn{margin-top:26px}
-.tabela{border:1px solid var(--linha);border-radius:var(--r);overflow:hidden}
+.tabela{border:1px solid var(--linha);border-radius:var(--r);overflow:hidden;background:#fff;position:relative;z-index:1}
 .tabela .cab{display:flex;justify-content:space-between;align-items:center;background:var(--navy);color:#fff;padding:14px 22px;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
 .tabela .cab b{color:var(--ciano);font-weight:600}
 .lin{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--linha);transition:background .25s}
@@ -297,6 +297,60 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 .rv.in .sw{animation:sobe .5s ease backwards;animation-delay:calc(var(--k)*30ms + .15s)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.hero .ent{opacity:1;transform:none}.mask{clip-path:none}.linha-proc .barra{transform:none}}
 
+
+/* ===== motion premium ===== */
+.hero h1 .ln,.rv h2 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.hero h1 .ln>span,.rv h2 .ln>span{display:block;transform:translateY(105%);transition:transform 1.1s cubic-bezier(.2,.75,.15,1);transition-delay:calc(var(--i)*90ms + var(--b,0s))}
+.hero h1.on .ln>span,.rv.in h2 .ln>span{transform:none}
+.hero h1.ent{opacity:1;transform:none;animation:none}
+.rv h2{opacity:1}
+.tecnico{position:absolute;right:24px;top:clamp(70px,8vw,110px);width:min(520px,38%);z-index:0;pointer-events:none;color:var(--ciano);filter:drop-shadow(0 0 18px rgba(11,31,51,.9))}
+.tecnico svg{width:100%;height:auto;overflow:visible}
+.tecnico .tr{fill:none;stroke:currentColor;stroke-width:1.4;stroke-dasharray:1;stroke-dashoffset:1;animation:desenha 1.8s cubic-bezier(.6,0,.2,1) forwards;animation-delay:var(--d)}
+.tecnico .tr.fina{stroke-width:.9;opacity:.7}
+@keyframes desenha{to{stroke-dashoffset:0}}
+.tecnico .rot{font-family:var(--mono);font-size:11px;letter-spacing:.12em;fill:#CFE6F4;opacity:0;animation:aparece .6s ease forwards;animation-delay:var(--d)}
+.tecnico .rot.ciano{fill:var(--ciano);font-weight:600}
+@keyframes aparece{to{opacity:1}}
+.tecnico .folha{opacity:0;animation:aparece 1s ease forwards 1.2s}
+.tecnico .folha-clip{transform-box:fill-box;transform-origin:top;transform:scaleY(0);animation:desenrola 1.8s cubic-bezier(.6,0,.2,1) forwards 1.1s}
+@keyframes desenrola{to{transform:scaleY(1)}}
+.tecnico .giro{stroke-dasharray:6 8;animation:gira 6s linear infinite}
+@keyframes gira{to{stroke-dashoffset:-140}}
+.tecnico .ponto{fill:var(--ciano);animation:pisca 2.4s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes pisca{0%,100%{opacity:.25}50%{opacity:1}}
+.hero .wrap>*:not(.tecnico):not(.kpis){position:relative;z-index:1}
+.spot{position:relative;isolation:isolate}
+.spot::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;opacity:0;transition:opacity .35s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),var(--spot,rgba(0,105,180,.09)),transparent 60%)}
+.spot:hover::after{opacity:1}
+.gar.spot,.kpi.spot{--spot:rgba(75,191,234,.16)}
+.par{overflow:hidden}
+.par img{transform:scale(1.14) translateY(var(--py,0px));will-change:transform}
+.emp-foto .f.par img{transform:scale(1.14) translateY(var(--py,0px))}
+.lin{position:relative}
+.tabela.rv .lin{opacity:0;transform:translateX(-14px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1),background .25s;transition-delay:calc(var(--k)*90ms + .2s)}
+.tabela.rv.in .lin{opacity:1;transform:none}
+.tabela .cab b{position:relative}
+.tabela .cab b::after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#1FAF55;margin-left:8px;vertical-align:1px;animation:pisca 1.6s infinite}
+.vitrine img.troca{animation:wipe .9s cubic-bezier(.7,0,.2,1)}
+@keyframes wipe{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+.vitrine .etq b,.vitrine .etq small{display:inline-block;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .4s}
+.vitrine.mudando .etq b,.vitrine.mudando .etq small{transform:translateY(10px);opacity:0}
+.mag{transition:transform .35s cubic-bezier(.2,.7,.2,1),background .2s,color .2s,border-color .2s}
+.btn-azul{position:relative;overflow:hidden}
+.btn-azul::after{content:"";position:absolute;top:0;bottom:0;width:60%;left:-80%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.28),transparent);transform:skewX(-20deg);transition:left .7s ease}
+.btn-azul:hover::after{left:130%}
+.seg .ic path,.seg .ic rect,.seg .ic circle,.gar svg *{stroke-dasharray:1;stroke-dashoffset:0}
+.seg.rv:not(.in) .ic *,.garantias.rv:not(.in) .gar svg *{stroke-dashoffset:1}
+.seg .ic *,.gar svg *{transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1);transition-delay:calc(var(--d,0s) + .3s)}
+.mega{position:relative;overflow:hidden;padding:40px 0 10px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:28px}
+.mega span{display:block;font-family:var(--tit);font-weight:800;font-stretch:75%;font-size:clamp(80px,19vw,280px);line-height:.85;letter-spacing:-.03em;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.16);background:linear-gradient(90deg,var(--azul),var(--ciano)) no-repeat;background-size:var(--p,0%) 100%;-webkit-background-clip:text;background-clip:text;user-select:none}
+.numero-sec{position:absolute;right:max(20px,calc((100% - var(--w))/2 - 10px));top:28px;font-family:var(--tit);font-weight:800;font-stretch:75%;font-size:clamp(90px,11vw,170px);line-height:1;color:transparent;-webkit-text-stroke:1px var(--linha);opacity:.8;pointer-events:none;z-index:0;transform:translateY(var(--ny,0px))}
+.cores .numero-sec,.qual .numero-sec{-webkit-text-stroke:1px rgba(255,255,255,.1)}
+section>.wrap{z-index:1}
+@media (max-width:1060px){.tecnico{display:none}.numero-sec{display:none}}
+@media (prefers-reduced-motion:reduce){.hero h1 .ln>span,.rv h2 .ln>span{transform:none}.tabela.rv .lin{opacity:1;transform:none}.tecnico .tr{stroke-dashoffset:0}.tecnico .rot,.tecnico .folha{opacity:1}.tecnico .folha-clip{transform:none}.par img{transform:none}.mega span{background-size:100% 100%}}
+
 /* responsivo */
 @media (max-width:1060px){
   .util .r{display:none}
@@ -373,7 +427,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
       <a href="#cores">Cores</a>
       <a href="#segmentos">Segmentos</a>
       <a href="#qualidade">Qualidade</a>
-      <a href="#cotacao" class="btn btn-azul">Solicitar cotação</a>
+      <a href="#cotacao" class="btn btn-azul mag">Solicitar cotação</a>
     </nav>
     <button class="hamb" id="hamb" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -382,15 +436,44 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 
 <main>
 <section class="hero" id="inicio">
-  <div class="hero-bg"><img src="img/estoque-rolos.jpg" alt="Estoque industrial da New TNT com rolos de TNT"></div>
+  <div class="hero-bg" id="hero-bg"><img src="img/estoque-rolos.jpg" alt="Estoque industrial da New TNT com rolos de TNT"></div>
   <div class="grade" aria-hidden="true"></div>
   <div class="scan" aria-hidden="true"></div>
   <div class="wrap">
+    <div class="tecnico" aria-hidden="true">
+      <svg viewBox="0 0 540 470">
+        <defs>
+          <pattern id="fibra" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".9" fill="#4BBFEA" opacity=".55"/><circle cx="7" cy="8" r=".7" fill="#4BBFEA" opacity=".35"/><animateTransform attributeName="patternTransform" type="translate" from="0 0" to="-20 40" dur="5s" repeatCount="indefinite"/></pattern>
+          <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4BBFEA" stop-opacity=".22"/><stop offset="1" stop-color="#4BBFEA" stop-opacity="0"/></linearGradient>
+        </defs>
+        <g class="folha"><g class="folha-clip"><path d="M150 236 L440 186 L380 410 L90 460 Z" fill="url(#fg)"/><path d="M150 236 L440 186 L380 410 L90 460 Z" fill="url(#fibra)"/></g></g>
+        <path class="tr" pathLength="1" style="--d:.3s" d="M150 96 L440 46"/>
+        <path class="tr" pathLength="1" style="--d:.45s" d="M150 236 L440 186"/>
+        <ellipse class="tr" pathLength="1" style="--d:.2s" cx="150" cy="166" rx="42" ry="70"/>
+        <path class="tr" pathLength="1" style="--d:.6s" d="M440 46 A42 70 0 0 1 440 186"/>
+        <ellipse class="tr fina" pathLength="1" style="--d:.7s" cx="150" cy="166" rx="13" ry="22"/>
+        <ellipse class="giro" cx="150" cy="166" rx="28" ry="47" fill="none" stroke="#4BBFEA" stroke-width="1" opacity=".55"/>
+        <path class="tr fina" pathLength="1" style="--d:1.2s" d="M150 236 L90 460 M440 186 L380 410"/>
+        <path class="tr fina" pathLength="1" style="--d:1.9s" d="M90 460 L380 410"/>
+        <path class="tr fina" pathLength="1" style="--d:2.2s" d="M80 484 L370 434 M80 476 L80 492 M370 426 L370 442"/>
+        <text class="rot ciano" style="--d:2.6s" x="150" y="490" transform="rotate(-9.8 150 490)">LARGURA ATÉ 1,70 M</text>
+        <path class="tr fina" pathLength="1" style="--d:2.3s" d="M462 110 L512 110 L512 70"/>
+        <text class="rot" style="--d:2.7s" x="420" y="60">ATÉ 4.000 M</text>
+        <text class="rot" style="--d:2.9s" x="420" y="76" opacity=".6">POR ROLO</text>
+        <path class="tr fina" pathLength="1" style="--d:2.4s" d="M300 320 L470 300"/>
+        <circle class="ponto" style="--d:0s" cx="300" cy="320" r="4"/>
+        <text class="rot ciano" style="--d:3s" x="474" y="296">20–150 G/M²</text>
+        <text class="rot" style="--d:3.2s" x="474" y="312">GRAMATURA</text>
+        <path class="tr fina" pathLength="1" style="--d:2.5s" d="M150 166 L40 166 L40 120"/>
+        <circle class="ponto" style="--d:.8s" cx="150" cy="166" r="3"/>
+        <text class="rot" style="--d:3.3s" x="0" y="110">MATERIAL VIRGEM</text>
+      </svg>
+    </div>
     <span class="cod ent" style="--d:.1s">Indústria de não tecidos · direto da fábrica</span>
     <h1 class="ent" style="--d:.2s">TNT em escala industrial para a sua <em>linha de produção.</em></h1>
     <p class="ent" style="--d:.35s">A NEWTNT fabrica e distribui não tecido em rolos para indústrias, confecções e empresas de todo o país. Material virgem, padrão uniforme, produção sob medida e estoque pronto para expedição.</p>
     <div class="ctas ent" style="--d:.5s">
-      <a class="btn btn-azul" href="#cotacao">Solicitar cotação<svg class="seta"><use href="#seta"/></svg></a>
+      <a class="btn btn-azul mag" href="#cotacao">Solicitar cotação<svg class="seta"><use href="#seta"/></svg></a>
       <a class="btn btn-linha" href="#especificacoes">Ver especificações técnicas</a>
     </div>
     <div class="selos ent" style="--d:.65s">
@@ -400,10 +483,10 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
       <span><svg><use href="#ok"/></svg>Representantes em todo o Brasil</span>
     </div>
     <div class="kpis ent" style="--d:.8s">
-      <div class="kpi"><small>Parque fabril</small><b><span data-n="5000" data-sep="1">5.000</span><i>m²</i></b><span>de área construída</span></div>
-      <div class="kpi"><small>Gramatura</small><b><span data-n="20">20</span>–<span data-n="150">150</span><i>g/m²</i></b><span>9 gramaturas padrão</span></div>
-      <div class="kpi"><small>Largura</small><b>até <span data-n="1.70" data-dec="2">1,70</span><i>m</i></b><span>ou corte sob medida</span></div>
-      <div class="kpi"><small>Metragem</small><b>até <span data-n="4000" data-sep="1">4.000</span><i>m</i></b><span>por rolo · 18 cores</span></div>
+      <div class="kpi spot"><small>Parque fabril</small><b><span data-n="5000" data-sep="1">5.000</span><i>m²</i></b><span>de área construída</span></div>
+      <div class="kpi spot"><small>Gramatura</small><b><span data-n="20">20</span>–<span data-n="150">150</span><i>g/m²</i></b><span>9 gramaturas padrão</span></div>
+      <div class="kpi spot"><small>Largura</small><b>até <span data-n="1.70" data-dec="2">1,70</span><i>m</i></b><span>ou corte sob medida</span></div>
+      <div class="kpi spot"><small>Metragem</small><b>até <span data-n="4000" data-sep="1">4.000</span><i>m</i></b><span>por rolo · 18 cores</span></div>
     </div>
   </div>
 </section>
@@ -411,6 +494,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 <div class="ticker" aria-hidden="true"><span class="rot">Abastecemos</span><div class="trilho" id="trilho"></div></div>
 
 <section id="empresa">
+  <span class="numero-sec" aria-hidden="true">01</span>
   <div class="wrap emp-grid">
     <div class="emp-txt rv">
       <span class="cod">01 <b>/</b> A empresa</span>
@@ -418,13 +502,13 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
       <p class="lead">A NEWTNT Indústria de Tecidos fabrica e distribui não tecidos para todo o território nacional, com representantes comerciais e logística aplicada para entregas efetivas.</p>
       <p>Nosso parque fabril, com 5.000 m² de área construída, fica no Polo Industrial de Sampaio Correia, em Saquarema/RJ. Com maquinário moderno, produzimos conforme a especificação de cada cliente e mantemos em estoque uma ampla gama de produtos prontos para distribuição.</p>
       <div class="pilares">
-        <div class="pilar"><small>01</small><b>Qualidade</b></div>
-        <div class="pilar"><small>02</small><b>Preço competitivo</b></div>
-        <div class="pilar"><small>03</small><b>Rapidez na entrega</b></div>
+        <div class="pilar spot"><small>01</small><b>Qualidade</b></div>
+        <div class="pilar spot"><small>02</small><b>Preço competitivo</b></div>
+        <div class="pilar spot"><small>03</small><b>Rapidez na entrega</b></div>
       </div>
     </div>
     <div class="emp-foto rv">
-      <div class="f mask"><img src="img/fabrica-aerea.jpg" alt="Vista aérea do parque fabril da New TNT" loading="lazy"></div>
+      <div class="f mask par"><img src="img/fabrica-aerea.jpg" alt="Vista aérea do parque fabril da New TNT" loading="lazy"></div>
       <div class="ficha">
         <h4>Ficha da unidade</h4>
         <dl><dt>Local</dt><dd>Polo Industrial de Sampaio Correia</dd><dt>Cidade</dt><dd>Saquarema · RJ</dd><dt>Área</dt><dd>5.000 m² construídos</dd><dt>Atendimento</dt><dd>Nacional</dd></dl>
@@ -434,6 +518,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 </section>
 
 <section class="proc" id="processo">
+  <span class="numero-sec" aria-hidden="true">02</span>
   <div class="wrap">
     <div class="proc-head rv">
       <div><span class="cod">02 <b>/</b> Cadeia produtiva</span><h2>Da matéria-prima à expedição</h2></div>
@@ -451,12 +536,13 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 </section>
 
 <section id="especificacoes">
+  <span class="numero-sec" aria-hidden="true">03</span>
   <div class="wrap spec-grid">
     <div class="spec-intro rv">
       <span class="cod">03 <b>/</b> Especificações</span>
       <h2>TNT em rolos, dentro da sua especificação</h2>
       <p class="lead">Trabalhamos com uma grade padrão de gramaturas, larguras e metragens. Precisa de algo fora da tabela? Produzimos sob medida, conforme a necessidade de cada cliente.</p>
-      <a class="btn btn-azul" href="#cotacao">Cotar minha especificação<svg class="seta"><use href="#seta"/></svg></a>
+      <a class="btn btn-azul mag" href="#cotacao">Cotar minha especificação<svg class="seta"><use href="#seta"/></svg></a>
     </div>
     <div class="tabela rv">
       <div class="cab"><span>Ficha técnica · TNT em rolos</span><b>NEWTNT</b></div>
@@ -475,6 +561,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 </section>
 
 <section class="cores" id="cores">
+  <span class="numero-sec" aria-hidden="true">04</span>
   <div class="wrap">
     <div class="rv">
       <span class="cod">04 <b>/</b> Cartela de cores</span>
@@ -484,7 +571,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
     <div class="cores-grid">
       <div class="vitrine rv" id="vitrine">
         <img src="img/cores/ref-11.jpg" alt="Rolo de TNT na cor amarelo" id="vit-img">
-        <div class="etq"><div><small id="vit-ref">REF. 11</small><b id="vit-nome">Amarelo</b></div><a class="btn btn-zap" id="pedir-cor" href="#" target="_blank" rel="noopener"><svg><use href="#zap"/></svg>Cotar esta cor</a></div>
+        <div class="etq"><div><small id="vit-ref">REF. 11</small><b id="vit-nome">Amarelo</b></div><a class="btn btn-zap mag" id="pedir-cor" href="#" target="_blank" rel="noopener"><svg><use href="#zap"/></svg>Cotar esta cor</a></div>
       </div>
       <div class="rv">
         <div class="swatches" id="swatches" role="group" aria-label="Cores disponíveis"></div>
@@ -495,23 +582,25 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 </section>
 
 <section id="segmentos">
+  <span class="numero-sec" aria-hidden="true">05</span>
   <div class="wrap">
     <div class="seg-head rv">
       <div><span class="cod">05 <b>/</b> Segmentos atendidos</span><h2>Matéria-prima para diversas indústrias</h2></div>
       <p class="lead">Nossos rolos abastecem fabricantes e transformadores de diferentes setores.</p>
     </div>
     <div class="seg-grid">
-      <article class="seg rv"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8" y="8" width="32" height="32" rx="3"/><path d="M24 16v16M16 24h16"/></svg><span class="num">S.01</span></div><h3>Saúde e higiene</h3><p>Descartáveis hospitalares, estética e proteção individual.</p><ul><li>Toucas</li><li>Máscaras</li><li>Aventais</li><li>Roupas hospitalares</li><li>Bandagens</li><li>Faixas para depilação</li></ul><div class="thumbs"><img src="img/aplic-2.jpg" alt="" loading="lazy"><img src="img/aplic-5.jpg" alt="" loading="lazy"><img src="img/aplic-6.jpg" alt="" loading="lazy"><img src="img/aplic-1.jpg" alt="" loading="lazy"></div></article>
-      <article class="seg rv"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 22v-6a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v6M4 24a4 4 0 0 1 8 0v6h24v-6a4 4 0 0 1 8 0v10H4zM10 34v4M38 34v4"/></svg><span class="num">S.02</span></div><h3>Moveleiro e estofados</h3><p>Forração e acabamento para a indústria de móveis.</p><ul><li>Forração de estofados</li><li>Cadeiras e poltronas</li><li>Capas para sofá</li><li>Capas para travesseiros</li></ul></article>
-      <article class="seg rv"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M17 6 6 12l4 10 4-2v22h20V20l4 2 4-10-11-6a7 7 0 0 1-14 0z"/></svg><span class="num">S.03</span></div><h3>Confecção e calçados</h3><p>Estrutura e reforço para confecções e calçadistas.</p><ul><li>Entretelas</li><li>Bonés</li><li>Jaquetas</li><li>Reforço para calçados</li><li>Protetores de roupas</li></ul></article>
-      <article class="seg rv"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 16h28l-2 26H12zM18 16v-4a6 6 0 0 1 12 0v4"/></svg><span class="num">S.04</span></div><h3>Embalagens e promocional</h3><p>Sacolas reutilizáveis, brindes e embalagens.</p><ul><li>Ecobags</li><li>Sacolas para supermercados</li><li>Embalagens para presentes</li><li>Bolsas e pastas</li><li>Bandeiras e faixas</li></ul></article>
-      <article class="seg rv"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 32V22l4-10h20l4 10v10H10zM6 32h36"/><circle cx="15" cy="33" r="3.5"/><circle cx="33" cy="33" r="3.5"/></svg><span class="num">S.05</span></div><h3>Automotivo</h3><p>Acabamento interno e proteção de veículos.</p><ul><li>Capas de estofamento</li><li>Revestimento de teto</li><li>Quebra-sol</li><li>Capas para carro</li></ul></article>
-      <article class="seg rv"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M24 42V20M24 20c0-8 6-12 14-12 0 8-6 12-14 12zM24 26c0-6-4-10-12-10 0 6 4 10 12 10z"/></svg><span class="num">S.06</span></div><h3>Agro e casa</h3><p>Proteção de cultivo e artigos para o lar.</p><ul><li>Proteção de estufas</li><li>Plantações e mudas</li><li>Esteiras capilares</li><li>Cama e mesa</li><li>Jogo americano</li></ul></article>
+      <article class="seg rv spot"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><rect x="8" y="8" width="32" height="32" rx="3"/><path d="M24 16v16M16 24h16"/></svg><span class="num">S.01</span></div><h3>Saúde e higiene</h3><p>Descartáveis hospitalares, estética e proteção individual.</p><ul><li>Toucas</li><li>Máscaras</li><li>Aventais</li><li>Roupas hospitalares</li><li>Bandagens</li><li>Faixas para depilação</li></ul><div class="thumbs"><img src="img/aplic-2.jpg" alt="" loading="lazy"><img src="img/aplic-5.jpg" alt="" loading="lazy"><img src="img/aplic-6.jpg" alt="" loading="lazy"><img src="img/aplic-1.jpg" alt="" loading="lazy"></div></article>
+      <article class="seg rv spot"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M8 22v-6a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v6M4 24a4 4 0 0 1 8 0v6h24v-6a4 4 0 0 1 8 0v10H4zM10 34v4M38 34v4"/></svg><span class="num">S.02</span></div><h3>Moveleiro e estofados</h3><p>Forração e acabamento para a indústria de móveis.</p><ul><li>Forração de estofados</li><li>Cadeiras e poltronas</li><li>Capas para sofá</li><li>Capas para travesseiros</li></ul></article>
+      <article class="seg rv spot"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M17 6 6 12l4 10 4-2v22h20V20l4 2 4-10-11-6a7 7 0 0 1-14 0z"/></svg><span class="num">S.03</span></div><h3>Confecção e calçados</h3><p>Estrutura e reforço para confecções e calçadistas.</p><ul><li>Entretelas</li><li>Bonés</li><li>Jaquetas</li><li>Reforço para calçados</li><li>Protetores de roupas</li></ul></article>
+      <article class="seg rv spot"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 16h28l-2 26H12zM18 16v-4a6 6 0 0 1 12 0v4"/></svg><span class="num">S.04</span></div><h3>Embalagens e promocional</h3><p>Sacolas reutilizáveis, brindes e embalagens.</p><ul><li>Ecobags</li><li>Sacolas para supermercados</li><li>Embalagens para presentes</li><li>Bolsas e pastas</li><li>Bandeiras e faixas</li></ul></article>
+      <article class="seg rv spot"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M10 32V22l4-10h20l4 10v10H10zM6 32h36"/><circle cx="15" cy="33" r="3.5"/><circle cx="33" cy="33" r="3.5"/></svg><span class="num">S.05</span></div><h3>Automotivo</h3><p>Acabamento interno e proteção de veículos.</p><ul><li>Capas de estofamento</li><li>Revestimento de teto</li><li>Quebra-sol</li><li>Capas para carro</li></ul></article>
+      <article class="seg rv spot"><div class="topo"><svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M24 42V20M24 20c0-8 6-12 14-12 0 8-6 12-14 12zM24 26c0-6-4-10-12-10 0 6 4 10 12 10z"/></svg><span class="num">S.06</span></div><h3>Agro e casa</h3><p>Proteção de cultivo e artigos para o lar.</p><ul><li>Proteção de estufas</li><li>Plantações e mudas</li><li>Esteiras capilares</li><li>Cama e mesa</li><li>Jogo americano</li></ul></article>
     </div>
   </div>
 </section>
 
 <section class="qual" id="qualidade">
+  <span class="numero-sec" aria-hidden="true">06</span>
   <div class="wrap qual-grid">
     <div class="rv">
       <span class="cod">06 <b>/</b> Qualidade</span>
@@ -523,25 +612,26 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
       </div>
     </div>
     <div class="garantias rv">
-      <div class="gar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h6"/><circle cx="18" cy="16" r="3"/><path d="m20.2 18.2 1.8 1.8"/></svg><b>Rastreabilidade</b><p>Da aquisição da matéria-prima à entrega, cada etapa é rastreável.</p></div>
-      <div class="gar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"/></svg><b>Material virgem</b><p>Sem mistura, com durabilidade, robustez e higienização.</p></div>
-      <div class="gar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><b>Produtos atóxicos</b><p>Produção orientada para bens de uso humano.</p></div>
-      <div class="gar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><b>Níveis de serviço (SLA)</b><p>Compromissos de serviço formalizados com os parceiros.</p></div>
+      <div class="gar spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h10M4 17h6"/><circle cx="18" cy="16" r="3"/><path d="m20.2 18.2 1.8 1.8"/></svg><b>Rastreabilidade</b><p>Da aquisição da matéria-prima à entrega, cada etapa é rastreável.</p></div>
+      <div class="gar spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c4 4 6 7 6 10a6 6 0 0 1-12 0c0-3 2-6 6-10z"/></svg><b>Material virgem</b><p>Sem mistura, com durabilidade, robustez e higienização.</p></div>
+      <div class="gar spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><b>Produtos atóxicos</b><p>Produção orientada para bens de uso humano.</p></div>
+      <div class="gar spot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg><b>Níveis de serviço (SLA)</b><p>Compromissos de serviço formalizados com os parceiros.</p></div>
     </div>
   </div>
 </section>
 
 <section id="estrutura">
+  <span class="numero-sec" aria-hidden="true">07</span>
   <div class="wrap">
     <div class="estr-head rv">
       <div><span class="cod">07 <b>/</b> Estrutura</span><h2>Estoque pronto para abastecer a sua produção</h2></div>
       <p class="lead">Fábrica própria e estoque organizado para atender de pedidos pontuais a fornecimentos recorrentes.</p>
     </div>
     <div class="mosaico" id="mosaico">
-      <figure class="rv"><img src="img/estoque-1.jpg" alt="Galpão de estoque com rolos de TNT" loading="lazy"><figcaption>Galpão de estoque</figcaption></figure>
-      <figure class="rv"><img src="img/fabrica-aerea-2.jpg" alt="Vista aérea do parque fabril" loading="lazy"><figcaption>Parque fabril · 5.000 m²</figcaption></figure>
-      <figure class="rv"><img src="img/estoque-3.jpg" alt="Prateleiras com rolos de TNT em várias cores" loading="lazy"><figcaption>Estoque por cor</figcaption></figure>
-      <figure class="rv"><img src="img/estoque-4.jpg" alt="Rolos de TNT prontos para envio" loading="lazy"><figcaption>Pronta entrega</figcaption></figure>
+      <figure class="rv par"><img src="img/estoque-1.jpg" alt="Galpão de estoque com rolos de TNT" loading="lazy"><figcaption>Galpão de estoque</figcaption></figure>
+      <figure class="rv par"><img src="img/fabrica-aerea-2.jpg" alt="Vista aérea do parque fabril" loading="lazy"><figcaption>Parque fabril · 5.000 m²</figcaption></figure>
+      <figure class="rv par"><img src="img/estoque-3.jpg" alt="Prateleiras com rolos de TNT em várias cores" loading="lazy"><figcaption>Estoque por cor</figcaption></figure>
+      <figure class="rv par"><img src="img/estoque-4.jpg" alt="Rolos de TNT prontos para envio" loading="lazy"><figcaption>Pronta entrega</figcaption></figure>
     </div>
     <div class="loc rv">
       <div><small>Unidade fabril</small><b>Sampaio Correia · Saquarema/RJ</b></div>
@@ -552,6 +642,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 </section>
 
 <section class="cot" id="cotacao">
+  <span class="numero-sec" aria-hidden="true">08</span>
   <div class="wrap cot-grid">
     <div class="rv">
       <span class="cod">08 <b>/</b> Cotação</span>
@@ -569,7 +660,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
       <span class="cod">Atendimento comercial</span>
       <h3>Fale direto com o nosso time de vendas</h3>
       <p>Atendemos empresas de todos os portes, com representantes em todo o Brasil.</p>
-      <a class="btn btn-zap" id="zap-cot" href="#" target="_blank" rel="noopener"><svg><use href="#zap"/></svg>Solicitar cotação no WhatsApp</a>
+      <a class="btn btn-zap mag" id="zap-cot" href="#" target="_blank" rel="noopener"><svg><use href="#zap"/></svg>Solicitar cotação no WhatsApp</a>
       <div class="canais">
         <a href="https://api.whatsapp.com/send?phone=5522999950154" target="_blank" rel="noopener"><small>WhatsApp</small><b>(22) 99995-0154 · (22) 99933-9270</b></a>
         <a href="tel:+552140404249"><small>Telefone</small><b>(21) 4040-4249 · (22) 2654-2519</b></a>
@@ -593,8 +684,9 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 </section>
 </main>
 
-<footer>
+<footer id="rodape">
   <div class="wrap">
+    <div class="mega" aria-hidden="true"><span>NEWTNT</span></div>
     <div class="ft">
       <div><span class="ft-logo"><img src="img/logo-newtnt.png" alt="New TNT"></span><p>NEWTNT Indústria de Tecidos Ltda<br>Fabricante e distribuidora de não tecidos.<br>CNPJ 17.441.927/0001-60</p></div>
       <div><h4>Empresa</h4><ul><li><a href="#empresa">Sobre</a></li><li><a href="#processo">Cadeia produtiva</a></li><li><a href="#qualidade">Qualidade</a></li><li><a href="#estrutura">Estrutura</a></li></ul></div>
@@ -632,7 +724,7 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 
   var sws=document.getElementById('swatches'),vi=document.getElementById('vit-img'),vn=document.getElementById('vit-nome'),vr=document.getElementById('vit-ref'),pc=document.getElementById('pedir-cor'),atual=0,auto=null,parado=false;
   CORES.forEach(function(c,i){var b=document.createElement('button');b.className='sw';b.style.setProperty('--c',c[2]);b.style.setProperty('--k',i);b.setAttribute('aria-pressed',i===0);b.setAttribute('aria-label','REF. '+c[0]+' '+c[1]);b.innerHTML='<i></i><small>REF. '+c[0]+'</small><span>'+c[1]+'</span>';b.addEventListener('click',function(){mostra(i);clearInterval(auto);auto=null;parado=true});sws.appendChild(b);new Image().src='img/cores/ref-'+c[0]+'.jpg'});
-  function mostra(i){atual=i;var c=CORES[i];[].forEach.call(sws.children,function(b,k){b.setAttribute('aria-pressed',k===i)});vi.classList.add('sai');setTimeout(function(){vi.src='img/cores/ref-'+c[0]+'.jpg';vi.alt='Rolo de TNT na cor '+c[1].toLowerCase();vi.classList.remove('sai')},220);vn.textContent=c[1];vr.textContent='REF. '+c[0];pc.href=zap('Olá! Gostaria de uma cotação de TNT na cor REF. '+c[0]+' ('+c[1]+') para a minha empresa.')}
+  function mostra(i){atual=i;var c=CORES[i];[].forEach.call(sws.children,function(b,k){b.setAttribute('aria-pressed',k===i)});var vt=document.getElementById('vitrine');vt.classList.add('mudando');vi.src='img/cores/ref-'+c[0]+'.jpg';vi.alt='Rolo de TNT na cor '+c[1].toLowerCase();vi.classList.remove('troca');void vi.offsetWidth;vi.classList.add('troca');setTimeout(function(){vn.textContent=c[1];vr.textContent='REF. '+c[0];vt.classList.remove('mudando')},300);pc.href=zap('Olá! Gostaria de uma cotação de TNT na cor REF. '+c[0]+' ('+c[1]+') para a minha empresa.')}
   mostra(0);
   if(!reduz&&'IntersectionObserver' in window){new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&!auto&&!parado)auto=setInterval(function(){mostra((atual+1)%CORES.length)},2800);if(!e.isIntersecting&&auto){clearInterval(auto);auto=null}})},{threshold:.3}).observe(document.getElementById('cores'))}
 
@@ -646,6 +738,30 @@ footer{background:var(--navy);color:var(--mudo2);padding:56px 0 28px;font-size:1
 
   function fmt(v,el){if(el.dataset.dec)return v.toFixed(+el.dataset.dec).replace('.',',');v=Math.round(v);return el.dataset.sep?v.toLocaleString('pt-BR'):String(v)}
   if(!reduz)setTimeout(function(){document.querySelectorAll('.kpis [data-n]').forEach(function(s){var alvo=+s.dataset.n,t0=null;function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/1600),e=1-Math.pow(1-p,3);s.textContent=fmt(alvo*e,s);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)})},900);
+
+
+  // títulos em máscara, linha por linha (palavras agrupadas)
+  function linhas(h,base){var html=h.innerHTML,tmp=document.createElement('div');
+    // quebra em palavras preservando <em>/<span>
+    var parts=[];(function walk(n,wrapTag){[].slice.call(n.childNodes).forEach(function(c){if(c.nodeType===3){c.textContent.split(/\s+/).forEach(function(w){if(w)parts.push(wrapTag?wrapTag.replace('%s',w):w)})}else if(c.nodeType===1){var t=c.cloneNode(false);t.innerHTML='%s';walk(c,t.outerHTML)}})})(h,null);
+    h.innerHTML=parts.map(function(w,i){return '<span class="ln" style="display:inline-block"><span style="--i:'+i+';--b:'+(base||0)+'s">'+w+'</span></span>'}).join(' ');}
+  var h1=document.querySelector('.hero h1');linhas(h1,.25);requestAnimationFrame(function(){requestAnimationFrame(function(){h1.classList.add('on')})});
+  document.querySelectorAll('.rv h2').forEach(function(h){linhas(h,.05)});
+  // linhas da ficha
+  document.querySelectorAll('.tabela .lin').forEach(function(l,k){l.style.setProperty('--k',k)});
+  // spotlight
+  document.querySelectorAll('.spot').forEach(function(el){el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  if(!reduz){
+    // botões magnéticos
+    if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.mag').forEach(function(b){b.addEventListener('pointermove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)'});b.addEventListener('pointerleave',function(){b.style.transform=''})});
+    // parallax
+    var pars=[].slice.call(document.querySelectorAll('.par')),nums=[].slice.call(document.querySelectorAll('.numero-sec')),hbg=document.getElementById('hero-bg'),mega=document.querySelector('.mega span'),rod=document.getElementById('rodape'),tk=false;
+    function px(){var vh=innerHeight;pars.forEach(function(el){var r=el.getBoundingClientRect();if(r.bottom<-100||r.top>vh+100)return;var c=(r.top+r.height/2-vh/2)/vh;el.style.setProperty('--py',(c*-40).toFixed(1)+'px')});
+      nums.forEach(function(n){var r=n.parentNode.getBoundingClientRect();n.style.setProperty('--ny',(r.top*-.07).toFixed(1)+'px')});
+      if(scrollY<innerHeight*1.2)hbg.style.transform='translateY('+(scrollY*.3)+'px)';
+      var rr=rod.getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh-rr.top)/(rr.height+vh*.25)));mega.style.setProperty('--p',(p*100).toFixed(1)+'%');tk=false}
+    px();addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(px)}},{passive:true});addEventListener('resize',px);
+  }
 
   var lb=document.getElementById('lb'),li=lb.querySelector('img');
   document.querySelectorAll('.mosaico figure').forEach(function(f){f.addEventListener('click',function(){var im=f.querySelector('img');li.src=im.src;li.alt=im.alt;lb.classList.add('on')})});
